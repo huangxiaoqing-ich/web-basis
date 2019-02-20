@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table表格</title>
+</head>
+<body>
+<p>表格由 table标签来定义。每个表格均有若干行（由 tr 标签定义），每行被分割为若干单元格（由 td 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。</p>
+<p>每个表格由 table 标签开始;每个表格行由 tr 标签开始;每个表格数据由 td 标签开始。</p>
+<table border="1">   <!-- border="1"用于给表格加边框，没有则无边框-->
+    <caption>表格的标题</caption>   <!-- <caption>与</caption>之间为表格的标题-->
+    <tr>
+        <th>HEADING</th>  <!-- <th>与</th>之间为表格的表头-->
+        <td>11</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <th>heading</th>
+        <td></td>   <!-- 表单中的空单元格 -->
+        <td>33</td>
+        <td>44</td>
+    </tr>
+    <tr>
+        <th>11111</th>
+    </tr>
+</table>
+<table border="1">  <!-- 横跨两列的单元格 -->
+    <caption>横跨两列的单元格</caption>
+    <tr>
+        <th>name</th>
+        <th colspan="2">tel</th>
+    </tr>
+    <tr>
+        <td>bill</td>
+        <td>0001</td>
+        <td>0002</td>
+    </tr>
+</table>
+<table border="1">  <!-- 横跨两行的单元格 -->
+    <caption>横跨两行的单元格</caption>
+    <tr>
+        <th>name</th>
+        <td>bill</td>
+    </tr>
+    <tr>
+        <th rowspan="2">tel</th>
+        <td>0001</td>
+    </tr>
+    <tr>
+        <td>0002</td>
+    </tr>
+</table>
+</body>
+</html>
