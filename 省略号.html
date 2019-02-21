@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省略号</title>
+    <style>
+        #div1{
+            width: 100px;
+            border: 1px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #div2{
+            width: 100px;
+            border: 1px solid;
+            margin-top: 100px;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">qqqqqqqqqq不会v不会吧v和qqqdhuhuhu</div>
+<div id="div2">啊手动阀手动阀撒旦发射点十分是否发放哦哦哦哦哦哦噢噢噢噢噢噢噢噢哦哦哦</div>
+</body>
+</html>
