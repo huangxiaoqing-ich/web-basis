@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景与边框</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            border:10px ;
+            border-style: dotted; /*dotted：点状轮廓*/
+            border-top-color: red;
+            border-bottom-color: palegreen;
+            border-left-color: yellow;
+            border-right-color: mediumpurple;
+            box-shadow:5px 5px 5px 5px rgba(50,100,200,.5); /*box-shadow：定义元素的阴影*/
+            border-radius: 30px/30px; /*定义元素的圆角*/
+        }
+        .div2{
+            margin-top: 20px;
+            padding: 5px;
+            border:30px solid;
+            border-image-source: url("imgs/blue.jpg");
+            border-image-slice: 1 9;
+            /*用以指定从哪 4 个位置分割图像（遵循上右下左的顺序）*/
+            /*border-image-slice
+            ·该属性指定从上，右，下，左 4 个方位来分割图像，将图像分成4个角，4条边和中间区域共9份，
+            中间区域始终是透明的（即没图像填充），除非加上关键字fill。
+            ·除fill关键字外，该属性接受1~4个参数值：
+            如果提供全部四个参数值，将按上、右、下、左的顺序进行分割；
+            提供三个，第一个用于上，第二个用于左、右，第三个用于下；
+            提供两个，第一个用于上、下，第二个用于左、右；
+            只提供一个，上右下左都使用该值进行分割。
+            ·对应的脚本特性为：borderImageSlice。
+            */
+            border-image-repeat: round;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1">WEB前端</div>
+<div class="div2">蓝色</div>
+</body>
+</html>
