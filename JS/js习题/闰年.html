@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闰年</title>
+</head>
+<body>
+
+<script>
+    /**
+     * @return {boolean}
+     */
+    function LeapYear(year) {
+        return !(year % 4 !== 0 || year % 400 !== 0);
+    }
+    var d= new Date();
+    //document.write(d);
+    var y = d.getFullYear();
+    document.write(LeapYear(y));
+</script>
+</body>
+</html>

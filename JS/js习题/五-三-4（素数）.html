@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>素数</title>
+</head>
+<body>
+
+<script>
+    /*在页面上编程输出100~1000之间的所有素数，
+    并要求每行显示6个素数。
+     */
+    function getPrimeNumber(low,high) {
+        sum=0;
+        document.write(low+"到"+high+"之间的素数有：<br>");
+        for (i = low; i <high; i++) {
+            for (j = (i - 1); j > 1; j--) {
+                if (i%j === 0) {
+                    i++;
+                }
+            }
+
+            sum++;
+            if (i>1000){
+                console.log(i);
+            } else{
+                document.write(i+"&nbsp;");
+            }
+            //document.write(i+"&nbsp;");
+            if (sum===6){
+                document.write("<br>");
+                sum=0;
+            }
+
+        }
+    }
+
+    getPrimeNumber(100,1000);
+</script>
+</body>
+</html>
