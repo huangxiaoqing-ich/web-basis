@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menu{
+            border: 1px solid #ccc;
+            width: 120px;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #menu li{
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-bottom: 1px dashed #ccc;
+            cursor: pointer;
+            list-style: none;
+        }
+        #menu li:hover{
+            background: #ff00ff;
+        }
+    </style>
+</head>
+
+<body>
+<ul id="menu">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+</ul>
+
+<script>
+    var oMeau=document.getElementById("menu");
+    var aLi=oMeau.getElementsByTagName("li");
+    document.oncontextmenu=function (e) {
+        e = e||window.event;  //解决浏览器关于事件（event）的兼容性问题；
+        oMeau.style.display='block';
+        oMeau.style.left=e.clientX+"px";
+        oMeau.style.top=e.clientY+"px";
+        return false;  //阻止浏览器的默认行为,此处为阻止浏览器的默认右键菜单；
+    };
+    document.onclick=function () {
+        oMeau.style.display="none";
+    };
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function () {
+            console.log(this.innerHTML); //this用于引用（指代）当前对象；
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认行为</title>
+</head>
+<body>
+<a href="https://www.baidu.com" id="baidu">baidu</a>
+
+<script>
+    var oBaidu=document.getElementById("baidu");
+    oBaidu.onclick=function () {
+        console.log(oBaidu.innerHTML);  // .innnerHTML用于获取元素内容；
+        return false;  //return false用于阻止浏览器默认行为；
+    };
+</script>
+</body>
+</html>

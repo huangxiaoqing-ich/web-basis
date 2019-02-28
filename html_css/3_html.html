@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3_html</title>
+    </head>
+    <body>
+    <!-- <h>与</h>之间的内容是页面里的标题 -->
+        <h1 style="color:#ff00ff">web</h1>
+        <h2 style="color: paleturquoise">web</h2>
+        <h3 style="color: palegreen">web</h3>
+        <h4 style="color: palegoldenrod">web</h4>
+        <h5 style="color: palevioletred">web</h5>
+
+        <!-- 锚点（超链接）-->
+        <a href="https://www.baidu.com" target="_blank">baidu</a>  <!-- target='-blank' 在新的标签页打开链接-->
+
+        <!--有序列表 order list-->
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li><a href="https://www.taobao.com">taobao</a></li>
+        </ol>
+        <!--无序列表 unorder list-->
+        <ul>
+            <li>php</li>
+            <li>nodejs</li>
+            <li>mongodb</li>
+        </ul>
+
+        <!--图片 绝对路径 相对路径-->
+        <img src="imgs/tmall01.gif">  <!--src:source源;其内容为图片的路径（相对路径或绝对路径）-->
+        <img src="../taobao01.png" alt="" title="淘宝二维码"> <!--   ../  用于返回上级路径。  alt可输入文本用于图片加载失败的提示-->
+        <a href="https://www.baidu.com" target="_blank">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551347940179&di=6ae8d4dd62b77f0d40024d7c41e66416&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201503%2F08%2F20150308144419_rZu8c.jpeg" alt="">
+        </a>
+
+        <!-- 表格 table-->
+        <table border="1"> <!--早期布局多采用table布局，已淘汰；现在用div+css进行布局-->
+            <tr> <!-- tr:table row表格的行-->
+                <td colspan="2">11</td>  <!-- td:table row表格的列；colspan 跨列-->
+                <td rowspan="2">12</td> <!-- rowspan 跨行，跨行只能从上往下-->
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+            </tr>
+        </table>
+        <!-- div+css -->
+        <div id="div1">这是一个div</div>
+        <div id="div2">这是一个DIV</div><!--块-->
+        <span>这是一个span</span>
+        <span>这是一个SPAN</span>
+        <p>这是一段文章</p>
+
+    </body>
+</html>
