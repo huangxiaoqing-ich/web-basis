@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平导航菜单</title>
+    <style>
+        *{ /* 样式重置 css reset*/
+            margin: 0;
+            padding: 0;
+        }
+        #list .item{
+            list-style: none; /* 去除li前的分隔符号*/
+            width: 100px;
+            height: 30px;
+            background: darkkhaki;
+            float: left;
+            margin-right: 5px;
+            -ms-text-align-last: right;
+            text-align: center;
+            line-height: 30px;
+        }
+        #list .item:hover{ /* 伪类选择器*/
+            background: pink ;
+        }
+        #list .item>a{
+            color: darkgoldenrod;
+            text-decoration: none; /* 去掉link自带下划线 */
+            display: block;
+            width: 100px;
+            height: 30px;
+        }
+        #list .submenu{
+            display: none;
+        }
+        #list .submenu>li{
+            background: gray;
+            cursor: pointer;
+            
+        }
+        #list .submenu>li:hover{
+            background: paleturquoise;
+        }
+        #list .item:hover >.submenu{
+           display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">
+            <a href="">link 1</a>
+            <ul class="submenu">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+                <li>04</li>
+            </ul>
+        </li>
+        <li class="item"><a href="">link 2</a></li>
+        <li class="item"><a href="">link 3</a></li>
+        <li class="item"><a href="">link 4</a></li>
+    </ul>
+</body>
+</html>
