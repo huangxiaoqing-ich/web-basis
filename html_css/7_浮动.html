@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        .container{
+            height: 200px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            font-size:50px;
+            text-align: center;/*水平方向居中*/
+            line-height: 200px;/*垂直方向居中*/
+           /* display: inline-block; 使div在一行*/
+            float: left;/*css浮动；元素浮动会脱离文档流*/
+            /*float: right;*/
+        }
+        .box1{
+            background: #00ff00;
+        }
+        .box2{
+            background: #ff00ff;
+        }
+        .box3{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+</div>
+<h1>阿斯蒂芬</h1>
+</body>
+</html>
