@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu>.item{
+            width: 100px;
+            height: 25px;
+            margin-right: 5px;
+            background: #ffff00;
+            /* border: 1px solid crimson; */
+            float: left;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        #menu .item>.submenu{
+            display: none;
+        }
+        #menu>.item:hover{
+            cursor: pointer;
+            background: paleturquoise;
+        }
+        #menu .submenu>li{
+            background: #ccc;
+
+        }
+        #menu .item:hover>.submenu{
+            display: block;
+        }
+        #menu .submenu li:hover{
+            background: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li class="item">
+            <a href="">菜单1</a>
+            <ul class="submenu">
+                <li><a href="">子菜单1</a></li>
+                <li><a href="">子菜单2</a></li>
+                <li><a href="">子菜单3</a></li>
+            </ul>
+        </li>
+        <li class="item"><a href="">菜单2</a></li>
+        <li class="item"><a href="">菜单3</a></li>
+        <li class="item"><a href="">菜单4</a></li>
+    </ul>
+</body>
+</html>
