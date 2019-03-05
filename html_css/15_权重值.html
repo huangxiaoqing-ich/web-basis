@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器权重值</title>
+    <style>
+        /*#div1{
+            background: #f00;
+        }
+        .div1{
+            background: #0f0;!important; /* 提高选择器权重
+        } */
+        /*#div1 .aa{
+            background: red;
+        }
+        #div1 div{
+            background: greenyellow;
+        }*/
+        /*#div1 .bb{
+            background: #ffff00;
+        }
+        .aa #div2{
+            background: #00ff00;
+        }
+        div.aa.bb{ /* 选中class既包含aa又包含bb的元素
+        background: palevioletred;
+        }*/
+        .cc{
+            background: #ffff00;
+        }
+        .dd{
+            background: #00ff00;
+        }
+        .ee{
+            background: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">
+        <div id="div2" class="bb">div</div>
+    </div>
+    <!--<div class="aa">aa</div>
+    <div class="aa bb">bb</div>
+    <h1 class="aa bb">cc</h1>-->
+<div class="cc">cc
+    <div class="dd">dd
+        <div class="ee">ee</div>
+    </div>
+</div>
+</body>
+</html>
