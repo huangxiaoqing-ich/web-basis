@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        body{
+            margin: 0;
+            height: 2000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background: #f00;
+        }
+        .box2{
+            background: #0f0;
+            /*position: relative; /*相对于自己初始的位置，不会脱离文档流*/
+            /*top: 50px;
+            left: 50px;
+            */
+            /*top: -50px;*/
+            position: absolute;/*绝对定位，会使元素脱离文档流。
+            相对于距离他最近已定位的祖先元素（即position属性定义过的祖先元素），若没有这样的祖先元素则相对于body元素*/
+            top: 50px;
+        }
+        .box3{
+            background: #00f;
+            width: 300px;
+        }
+        .box4{ /*网页中的广告通常采用这种方式*/
+            width: 150px;
+            height: 150px;
+            background: #ff0;
+            position: fixed;
+            top: 280px;
+        }
+        .toolbar{
+            width: 30px;
+            /*height: 100%;*/
+            background: #000;
+            float: right;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+        }
+        .box5{
+            background: #ff00ff;
+            height: 100px;
+            display: none;
+        }
+        .box6{
+            width: 200px;
+            height: 200px;
+            background: #00ffff;
+        }
+    </style>
+</head>
+<body>
+<div class="box box1">1</div>
+<div class="box box2">2</div>
+<div class="box box3">3</div>
+<div class="box4">4</div>
+
+<div class="toolbar"></div>
+
+<strong>strong标签</strong>
+<span>span标签</span>
+
+<div class="box box5"></div>
+<div class="box box5"></div>
+<div class="box box5"></div>
+<div class="box6">6</div>
+</body>
+</html>
