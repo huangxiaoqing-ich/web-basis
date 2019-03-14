@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+    <style>
+        #div1::after{
+            content: '123'; /* 伪元素选择器中content属性必须有*/
+            background: #ffff00;/* 伪元素默认是行级元素*/
+            display: block;
+        }
+        #div1::before{
+            content: '000';
+            background: #00ff00;
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1">阿斯蒂芬</div>
+</body>
+</html>
