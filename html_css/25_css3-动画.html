@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3动画</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            border:5px dashed; /*  dashed:虚线*/
+            margin:100px auto;
+        }
+        .box2{
+            background:#f00fff;
+            /*transform:rotate(45deg); !* 旋转：正数顺时针、负数逆时针*!*/
+            /*!*transform-origin:left top; !* 定义旋转中心*!*!*/
+            /*transform-origin:50px 50px;*/
+            /*transition: width 2s linear,height 1.5s linear; !* 过渡：属性 时间跨度 过渡效果*!*/
+
+            transition:all 2s linear; /* linear:匀速*/
+        }
+        .box2:hover{
+            /*transform:rotate(45deg);*/
+            /*width:400px;*/
+            /*height:400px;*/
+            background:#00ff00;
+            transform:scale(2,.5) rotate(45deg);
+            /*transition:*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="box box1">
+        <div id="div2" class="box box2">阿斯蒂芬</div>
+    </div>
+</body>
+</html>
