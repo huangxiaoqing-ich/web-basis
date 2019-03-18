@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+    <style>
+    #div1{
+        width: 200px;
+        height: 200px;
+        background: #f00;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    
+    <script>
+    var oDiv1=document.getElementById("div1");
+
+    oDiv1.onmousedown=function(e){ //e
+    //计算鼠标距离div边的距离
+    var disX=e.clientX-oDiv1.offsetLeft;
+    var disY=e.clientY-oDiv1.offsetTop;
+
+    document.onmousemove=function(e){ //绑定document
+        //计算鼠标和div移动的距离
+        console.log(e.clientX,e.clientY);
+        oDiv1.style.left=e.clientX-disX+"px";
+        oDiv1.style.top=e.clientY-disY+"px";
+    };
+    
+    oDiv1.onmouseup=function(){
+        //解除onmousemove事件
+        document.onmousemove=null;
+    };
+    };
+    </script>
+</body>
+</html>
