@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <title>CSS3选择器</title>
     <style>
-    #ul1 .aa+li{
-        background: #f00;
-    }
-    #ul2 .bb~li{
-        color:#0f0 ;
-    }
+        /* 元素、关系选择器 */
+        #ul1 .aa+li{ 
+            background: #f00;
+        }
+        #ul2 .bb~li{ 
+            color:#0f0 ;
+        }
+        
+        /* 属性选择器*/
+        input[name^="user"]{ 
+            background: #ff0;
+        }
+        input[name*="word"]{ 
+            background: #b07cc0;
+        }
+
+        div[class~="a"]{
+            color:paleturquoise;
+            boder:2px solid;
+        }
+        div[class|="a"]{
+            background: rgb(3, 133, 126);
+        }
     </style>
 </head>
 <body>
@@ -26,5 +43,22 @@
         <li>04</li>
         <li>05</li>
     </ul>
+
+    用户名：<input type="text" name="username">
+    密码：<input type="password" name="password">
+    年龄：<input type="text" name="userage">
+
+    <div class="a">asdf</div>
+    <div class="b">fdsa</div>
+    <div class="a b">abab</div>
+    <div class="a-b">lll</div>
+
+    <!-- <img src="1.jpg" alt="">
+    <img src="2.jpg" alt="">
+    <img src="3.jpg" alt="">
+    <img src="4.jpg" alt=""> -->
+    
+    
+    
 </body>
 </html>
