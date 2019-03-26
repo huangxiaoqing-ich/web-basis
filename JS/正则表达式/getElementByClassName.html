@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>01</li>
+        <li class="aa">02</li>
+        <li>03</li>
+        <li>04</li>
+        <li class="aa">05</li>
+    </ul>
+    <script>
+        // var aLi=document.getElementsByClassName("aa"); 此方法在IE8以下不兼容；
+        
+        function getEleByClassName(claName){
+            var result=[];
+            var allEle=document.getElementsByTagName("*");
+            for(i=0;i<allEle.length;i++){
+                //匹配取得的classname和输入的参数相同的元素；
+                var reg=new RegExp('\\b'+claName+'\\b');
+                var str =allEle[i].className;
+                if(reg.test(str)){
+                    result.push(allEle[i]);
+                }
+            }
+            return result;
+        }
+
+        var aLi=getEleByClassName("aa");
+        for(j=0;j<aLi.length;j++){
+            aLi[j].style.background='red';
+        }
+    </script>
+</body>
+</html>
