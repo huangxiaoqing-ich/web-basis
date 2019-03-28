@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            /* height: 200px; */
+            border:1px solid;
+        }
+        #div1::first-line{
+            background: #f00;
+        }
+        #div1::first-letter{
+            font-size: 30px;
+        }
+        #div1::selection{
+            background: #ff0;
+        }
+
+        input::-webkit-input-placeholder {
+	        color: rgb(253, 193, 158);
+        }
+        input:-ms-input-placeholder { /* IE10+ */
+	        color: rgb(253, 193, 158);
+        }
+        input:-moz-placeholder { /* Firefox4-18 */
+	        color: rgb(253, 193, 158);
+        }
+        input::-moz-placeholder { /* Firefox19+ */
+	        color: rgb(253, 193, 158);
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">啊手动阀手动阀手动阀第三方十大时尚大方啊士大夫看见看来啊士大夫大师傅啊手动阀撒旦发生十分大方</div>
+    <input type="text" placeholder="输入提示（占位符）" />
+</body>
+</html>
