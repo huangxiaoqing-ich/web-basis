@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            text-shadow: 10px 10px 3px orange; /* 文本阴影 */
+            box-shadow: 10px 10px 1px #ff0f0f; /* 元素的阴影 */
+        }
+        #div2{
+            width: 200px;
+            margin-top: 50px;
+            border:1px solid;
+
+            /* 文本溢出隐藏*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #div3{
+            width: 200px;
+            margin: 20px;
+            border:1px solid;
+
+            /* 强制换行*/
+            /* word-break: break-all; */
+
+            word-wrap:break-word;
+
+            font-family: 'Serendity Script';
+
+            /* 透明度兼容性问题 */
+            opacity:.5; /* 标准浏览器 ；取值范围：0~1*/
+            filter: alpha(opacity=50); /* 早期IE浏览器；取值范围：0~100 */
+        }
+        @font-face{ /* 定义字体*/
+            font-family: 'Serendity Script';
+	        src: url('Serendipity Script/Serendity Script.eot'); /* IE9+ */
+	        src: url('Serendipity Script/Serendity Script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		    url('Serendipity Script/Serendity Script.woff') format('woff'), /* chrome、firefox */
+		    url('Serendipity Script/Serendity Script.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		    url('Serendipity Script/Serendity Script.svg#fontname') format('svg'); /* iOS 4.1- */
+
+        }
+        #div4{
+            width: 200px;
+            height: 100px;
+            border: 1px solid;
+            border-radius:10px 20px 30px 40px; /* 边框圆角的半径：以顺时针方向依次赋值*/
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #f0f;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">阿斯蒂芬</div>
+    <div id="div2">阿斯顿法定撒飞洒大师傅士大夫发射点反对多发点撒撒旦范德萨发达啊发士大夫撒旦是阿斯蒂芬撒旦萨芬对方是否</div>
+    <div id="div3">asadfjkllkjfddsaadfkskljfskdljdksjdlksfjaslkskl</div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+</html>
