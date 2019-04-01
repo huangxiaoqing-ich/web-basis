@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景</title>
+    <style>
+        #div1{
+            width: 700px;
+            height: 700px;
+            background: #fff url(img/purple-flower.png) no-repeat;
+            border:10px solid rgba(0,255,255,.2);
+            padding: 10px;
+            
+            background-origin: padding-box;
+            background-clip:content-box;
+        }
+        #div2{
+            font-size:50px;
+            font-weight: bold; /* 字体粗细 */
+            background:url(img/purple-flower.png) no-repeat;
+            -webkit-background-clip: text; /* 以文本为裁剪模板 */
+            color: transparent;
+        }
+        #div3{
+            width: 500px;
+            height: 500px;
+            border:10px solid rgba(202, 202, 202, 0.3);
+            background:url(img/purple-flower.png) no-repeat;
+            background-size:contain;
+        }
+        #div4{
+            width: 800px;
+            height: 800px;
+            border:10px solid rgba(243, 154, 154, 0.3);
+            background:url(img/purple-flower.png) no-repeat 0 0,url(img/tower.png) no-repeat 100px 100px;
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background:linear-gradient(to bottom,#0ff,#f0f);/* 渐变背景 */
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">紫色</div>
+    <div id="div2">background</div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+</html>
