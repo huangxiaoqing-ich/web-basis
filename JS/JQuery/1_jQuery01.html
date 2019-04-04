@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //jQuery中的文档就绪函数
+        $(document).ready(function(){
+            console.log(111);
+        })
+    </script>
+</head>
+<body>
+    <!-- 
+        jQuery:前端的一个类库
+     -->
+    <div id="div1">asdf</div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        //jQuery
+        var $div1=$("#div1");
+        // $div1.css();
+        //原生
+        var div1=document.getElementById("div1");
+        // div1.css();
+
+        //jquery转化成原生
+        console.log($div1[0]);
+        console.log($div1.get(0));
+
+
+    
+    </script>
+</body>
+</html>
