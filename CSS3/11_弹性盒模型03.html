@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹性盒模型03</title>
+    <style>
+        /* 弹性盒模型新语法：
+        
+         */
+        .body{
+            margin: 0;
+           }
+        .parent{
+            display:flex;
+            flex-direction:row-reverse;
+        }
+        .elem{
+            height: 400px;
+            flex-grow: 1;
+        }
+        .elem1{
+            background: #f00;
+            
+        }
+        .elem2{
+            background: #ff0;
+            
+        }
+        .elem3{
+            background: #0f0;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="elem elem1">1</div>
+        <div class="elem elem2">2</div>
+        <div class="elem elem3">3</div>
+    </div>
+</body>
+</html>

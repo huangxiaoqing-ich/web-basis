@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹性盒模型02</title>
+    <style>
+        .body{
+            margin: 0;
+        }
+        .parent{
+            display:-webkit-box;
+            -webkit-box-align:end; /* box-align取值有：start（上边对齐）、end（底边对齐）、center（居中对齐）等 */
+        }
+        .elem{
+            -webkit-box-flex:1;
+        }
+        .elem1{
+            background: #f00;
+            height: 200px;
+            -webkit-box-ordinal-group: 3; /* box-ordinal-group用于改变弹性盒模型子元素的排列顺序 */
+        }
+        .elem2{
+            background: #ff0;
+            height: 300px;
+            -webkit-box-ordinal-group:1;
+        }
+        .elem3{
+            background: #0f0;
+            height: 100px;
+            -webkit-box-ordinal-group: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="elem elem1">1</div>
+        <div class="elem elem2">2</div>
+        <div class="elem elem3">3</div>
+    </div>
+</body>
+</html>
