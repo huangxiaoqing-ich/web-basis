@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            
+        }
+        .div1{
+            border:1px dashed;
+        }
+        .div2{
+            background: #f00;
+            transition: all 1s ease;
+            /* 等效于： */
+            /* transition-property: width;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay：1s; */
+        }
+        .div2:hover{
+            width: 440px;
+            background: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- transition过渡 -->
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            
+        }
+        .div1{
+            border:1px dashed;
+        }
+        .div2{
+            background: #f00;
+            animation:larger 3s linear forwards 2;
+        }
+        @keyframes larger{
+            0%{
+                width: 240px;
+                background: #0f0;
+            }
+            50%{
+                width: 300px;
+                background: #00f;
+            }
+            100%{
+                width: 280px;
+                background: rgb(218, 235, 69);
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="div1">
+                <div class="div2"></div>
+            </div>
+</body>
+</html>
