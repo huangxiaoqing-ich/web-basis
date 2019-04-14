@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d</title>
+    <style>
+            div{
+                width: 200px;
+                height: 200px;
+                
+            }
+            .div1{
+                margin: 100px auto;
+                border:1px dashed;
+                perspective: 800px; /* 视角 */
+                
+            }
+            .div2{
+                background: #f00;
+                /* transform: rotateX(-45deg); */
+                /* transform: rotateY(45deg); */
+                /* transform:rotateZ(45deg); */
+                transform:translateZ(-200px);
+            }
+            
+        </style>
+</head>
+<body>
+        <div class="div1">
+                <div class="div2">阿斯蒂芬</div>
+            </div>
+</body>
+</html>

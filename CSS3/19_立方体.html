@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立方体</title>
+    <style>
+        body{
+            margin: 0;
+            background: #000;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style:preserve-3d; 
+            /* perspective-origin: 50% 50%; */
+            animation: rotate 2s linear infinite;
+        }
+
+        .elem{
+            background: rgba(255,255,255,.4);
+            width: 200px;
+            height: 200px;
+            border:1px solid #fff;
+            border-radius: 5px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position:absolute;
+        }
+        .div1{
+            transform:rotateY(90deg) translateZ(100px);
+            
+        }
+        .div3{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .div6{
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .div5{
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+        .div4{
+            transform: translateZ(100px);
+
+        }
+        .div2{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        @-webkit-keyframes rotate {
+            to{
+                transform: rotateY(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="elem div1">1</div>
+        <div class="elem div2">2</div>
+        <div class="elem div3">3</div>
+        <div class="elem div4">4</div>
+        <div class="elem div5">5</div>
+        <div class="elem div6">6</div>
+    </div>
+    
+</body>
+</html>
