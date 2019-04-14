@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>let-const</title>
+</head>
+<body>
+    <script>
+        // var和let的区别：
+        //用var声明的变量会有变量提升
+        /*console.log(a);
+        var a=1;
+        */
+
+        //用let声明的变量不会有变量提升
+        /*console.log(b); //报错：b is not defined
+        let b=2;
+        */
+        
+        //let声明的变量不能重复声明
+        /*let c=3;
+        let c=4;
+        console.log(c); //报错：Identifier 'c' has already been declared
+        */
+        
+        //ES5只有全局作用域和函数作用域
+        /*var z=20;
+        function foo(){
+            var x=10; //局部变量
+            y=5; //全局变量
+
+            console.log(z);
+        }
+        foo(); //20
+
+        //console.log(x);//报错：x is not defined
+        console.log(y); //5
+        */
+
+        //作用域
+        /*function fn1(){
+            var m=8;
+            function fn2(){
+                var n=9;
+
+                console.log(m);
+            }
+            fn2();
+        }
+        fn1();//8
+        */
+
+
+        //let有块级作用域
+        var x=true;
+        if(x){
+            let y=10;
+            console.log(y);//10
+        }
+        //console.log(y); //报错：y is not defined
+
+
+    </script>
+</body>
+</html>
