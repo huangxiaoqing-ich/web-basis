@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扩展运算符</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+    </ul>
+    <script>
+        let arr=[1,2,3];
+        // let arr1=arr;
+        let arr2=[...arr];
+        let arr3=[4,5,6];
+        let arr4=[7,8,9];
+        let arr5=[...arr3,...arr4];
+        console.log(arr5);
+
+        let arr6=['q','w',...arr];
+        console.log(arr6);
+
+        var aLi=document.getElementsByTagName('li');
+        console.log(aLi);
+        var arrLi=[...aLi];
+        console.log(arrLi);
+        arrLi.push(1);
+        console.log(arrLi);
+
+
+        let obj1={
+            name:'zz',
+            age:14,
+            say:function(){
+                console.log('saying');
+            }
+        }
+        let obj2={
+            name:'pp',
+            age:19,
+            gender:'male'
+        }
+        let obj={...obj1,...obj2}; //相同属性则后者覆盖前者；
+
+
+        function fn1(){
+            console.log(arguments);//arguments 所有的参数
+            console.log(arguments.callee);
+        }
+
+        fn1(11,22,33);
+        function fn2(a1,a2,...rest){//rest 剩余的合成新数组
+            console.log(rest);
+        }
+        fn2(12,21,31);
+    </script>
+</body>
+</html>
