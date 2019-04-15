@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>let-临时失效区</title>
+</head>
+<body>
+    <script>
+        // 临时失效区：let声明的变量，当前作用域不允许外部的同名变量赋值进来
+        
+        let a=10;
+        function foo(){
+            // console.log(a); //a is not defined
+            let a=2;
+            console.log(a);
+        }
+        foo();//2
+        
+
+        var b=30;
+        function foo1(){
+            console.log(b); //undefined,因为变量提升
+            var b=20;
+            console.log(b); //20
+        }
+        foo1();
+    </script>
+</body>
+</html>
