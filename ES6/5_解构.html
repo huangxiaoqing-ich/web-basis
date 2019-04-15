@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //数组解构:
+       let arr=[1,2,3];
+        /*let a=arr[0];
+       let b=arr[1];
+       let c=arr[3];
+        */
+        //等效于：
+       let[a,b,c]=arr;
+       console.log(a);//1
+       console.log(b);//2
+       console.log(c);//3
+
+       let arr1=[1,2,[3,4]];
+       let[d,e,[f,g]]=arr1;
+       console.log(d);//1
+       console.log(e);//2
+       console.log(f);//3
+       console.log(g);//4
+
+       let arr2=[9,[7,8]];
+       let[h,i]=arr2;
+       console.log(h,i); //9 [7,8]
+
+
+        /*
+        //对象解构：
+       let obj={
+           name:'zs',
+           age:13
+       }
+       //let {age,name}=obj; //按属性名对应进行赋值
+       //console.log(name,age);//zs 13
+       
+       let{name:xx,age}=obj;
+       console.log(xx,age);//zs 13
+        */
+
+        //字符串解构 ：
+       let str='es6';
+       let [x,y]=str;//只会取到前两个
+       console.log(x,y);//e s
+
+
+       var obj1={
+           name:'lily',
+           age:15,
+           say:function(){
+               console.log('saying');
+           },
+           learn:function(){
+               console.log('learning');
+           }
+       }
+       let{name,say}=obj1;
+       console.log(name);//lily
+       say();//saying
+
+       function foo([a,b]) {//[a,b]=[1,2,3]
+           console.log(a);
+       }
+       foo([1,2,3]);
+
+
+    </script>
+</body>
+</html>
