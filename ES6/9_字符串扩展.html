@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串扩展</title>
+</head>
+<body>
+    <script>
+        //1.模板字符串: ` ${}
+
+        let name='lily';
+        let age=18;
+        console.log("name:"+name+",age:"+age);
+
+        let id='div1';
+        console.log("<div id='"+id+"'></div>");
+
+        console.log(`<div id='${id}'></div>`);//字符串拼接
+        console.log(`${age+2}`);//运算 20
+
+        //2.includes检验字符串是否包含某些字符；
+        let str1='asdf';
+        console.log(str1.includes('s'));//true
+        console.log(str1.includes('ab'));//false
+        //3.indexOf查找某些字符在某一字符串的下标索引；
+        console.log(str1.indexOf('d')); //2
+
+        //4.startWith/endWith 某一字符串是否以某些字符开始/结束;
+        console.log(str1.startsWith('s'));
+        console.log(str1.endsWith('f'));
+
+        //5.padStart(数字,'字符/字符串')/padEnd() 从字符串前部/后部进行填充
+        console.log(str1.padStart(5,'hjkl'));
+        console.log(str1.padStart(8,'hjkl'));
+        console.log(str1.padEnd(5,'er'));
+
+        //6.repeat 重复
+        console.log(str1.repeat(3));
+
+
+
+    </script>
+</body>
+</html>
