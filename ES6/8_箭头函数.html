@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">阿斯蒂芬</div>
+    <script>
+        /*
+        fn1();//fn1
+        //fn2(); //fn2 is not a function;因为fn2的声明方式变量fn2不会有提升，是undefined；
+        function fn1(){
+            console.log('fn1');
+        }
+        var fn2=function(){
+            console.log('fn2');
+        }
+        fn2();//fn2
+        */
+        
+        /*
+        //ES6中的箭头函数写法:
+        let fn=()=>{
+
+        }
+        */
+        var oDiv1=document.getElementById('div1');
+        oDiv1.onclick=function(){
+            /*
+            //用call/apply进行绑定会立即调用，不会有时间间隔：
+            // setTimeout(function(){
+            //     console.log(this.innerHTML);
+            // }.call(this),1000);
+
+            //用bind进行绑定会正常执行：
+            setTimeout(function(){
+                console.log(this.innerHTML);
+            }.bind(this),1000);
+
+            //转换成箭头函数：
+            */
+            setTimeout(()=>{
+                console.log(this.innerHTML);
+            },1000);
+            /*箭头函数与普通函数的区别1：
+            普通函数中的this指向的是调用时的this;
+            箭头函数中的this指向的是声明时的this(即，父作用域中的this);
+            */
+        }
+
+            /*
+            //箭头函数与普通函数的区别2:
+            //箭头函数不能当作构造函数
+            function Person(){
+                this.name=name;
+            }
+            var p1=new Person("lily");
+            
+
+            // let Person=(name)=> {
+            //     this.name=name;
+            // }
+            // let p1=new Person();
+            */
+
+            /*
+            区别3：箭头函数不能使用arguments获取数组对象
+            */
+            let a=(...rest)=>{
+                // console.log(arguments); //arguments is not defined
+                console.log(rest);
+            }
+            a(1,2,3);//[1,2,3]
+
+            let b=(x,y,z=5)=>{//传参时，若没传参或传参是undefined，会使用默认值；
+                console.log(x,y,z);//7 8 9
+            }
+            b(7,8,9);
+
+
+    </script>
+</body>
+</html>
