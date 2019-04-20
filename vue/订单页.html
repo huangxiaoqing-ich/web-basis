@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易订单页</title>
+</head>
+<body>
+        <div id="app">
+                <div>
+                    是否需要额外付费设施
+                    <input type="checkbox" v-model="isCheck" @click="foo()">
+                    <ul v-show="isCheck">
+                        <li v-for="obj in payList">
+                            {{obj.name}} ({{obj.price}})
+                            <input type="checkbox" :value="obj" v-model="orderList"> 
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p>订单费用信息</p>   
+                    <ul>
+                        <li v-for="obj in orderList">
+                            {{obj.name}}({{obj.price}})
+                        </li>
+                    </ul>
+                </div>
+                <div>总金额：{{total()}}</div>
+            </div>
+            <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isCheck:true,
+                payList:[
+                    {
+                        name:"wifi",
+                        price:50
+                    },
+                    {
+                        name:"computer",
+                        price:100
+                    },
+                    {
+                        name:"sofa",
+                        price:80
+                    }
+                ],
+                orderList:[
+                    {
+                        name:"豪华型房间",
+                        price:400
+                    }
+                ]
+            },
+            methods:{
+                total(){
+                    let sum=0;
+                    this.orderList.forEach(function(obj){
+                        sum+=obj.price;
+                    })
+                    return sum;
+                },
+                foo(){
+
+                    this.orderList.splice(1);
+                    //splice
+                }
+            }
+        })
+    </script>
+</body>
+</html>
