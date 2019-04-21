@@ -5,6 +5,33 @@
     <title>$Title$</title>
 </head>
 <body>
-$END$
+<script>
+    // 函数
+    /*
+    var a=prompt("please input the first number:",0);
+    var b=prompt("please input the second number:",0);
+    //prompt获得的数值是string型
+    */
+
+    /*
+    // 函数的声明：
+    function sum(num1,num2){ //num1,num2是形参；
+        var result=num1+num2; 
+        return result; //一个函数的return执行之后，函数就停止运行了
+        // return不会限制结果的输出形式
+    }
+    // alert(result); //result is not defined.因为：函数内声明的局部变量result，在函数外部不能访问
+    //函数的调用：
+    var sum1=sum(3,4);
+    console.log(sum1);
+    */
+    
+
+    var a; //全局变量
+    function foo(){
+        a=5;
+    }
+    foo();
+    console.log(a);
 </body>
 </html>
