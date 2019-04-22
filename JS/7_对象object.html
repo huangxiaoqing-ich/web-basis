@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>object</title>
+    <style>
+        .list1{
+            list-style: none;
+            color: #ff0036;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <script>
+        //JS基于面向对象，但是不是面向对象
+        var obj1={
+            name:"zs",
+            age:18,
+            eat:function(){
+                console.log("eating...");
+            }
+
+        };
+        console.log(obj1);
+        console.log(typeof obj1);
+        console.log(obj1.name);
+        obj1.eat();
+        console.log(obj1['age']);
+
+        for(var j in obj1){ //for...in...用于循环遍历对象
+            console.log(j+':'+obj1[j]);
+        }
+
+        var list1=[
+            {
+                name:'ls',
+                age:16
+            },{
+                name:'ww',
+                age:17
+            },{
+                name:'zl',
+                age:16
+            }
+        ];
+        document.write('<ul class="list1">');
+        for(var i=0;i<list1.length;i++){
+            document.write('<li>'+list1[i].name+':'+list1[i].age+'</li>');
+        }
+        document.write('</ul>');
+
+        var obj3=new Object();
+
+    </script>
 </body>
 </html>
