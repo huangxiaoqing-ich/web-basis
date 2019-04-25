@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //全局 局部 作用域
+        //作用域链
+        var a=5;//全局
+        function foo(){
+            /* 
+            //1:
+            var a=6;//局部
+            console.log('函数内a='+a);//6
+            */ 
+
+            //2:
+            a=6;
+            console.log('函数内:a='+a);//6
+            
+        }
+        foo();
+        console.log('函数外:a='+a);//1:  5；2:  6
+
+        var x=7;//基本数据类型存在栈内存中
+        var y=x;
+        x=8;
+        console.log(y);//7
+
+        var obj1={//引用数据类型存在堆内存中
+            name:'zs',
+            age:17
+        };
+        var obj2=obj1;//浅拷贝(obj2指向obj1的堆内存)
+        var obj3=new Object;//深拷贝开始（obj3是新开辟的堆内存空间）
+        obj3.name=obj1.name;
+        obj3.age=obj1.age;//深拷贝结束
+
+        obj1.name='li';
+        console.log(obj2.name);//li
+        console.log(obj3.name);//zs
+
+
+    </script>
+</body>
+</html>
