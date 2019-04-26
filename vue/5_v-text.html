@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <!-- v-text:解决刷新的闪现显示 -->
+        <div v-text="str"></div>
+        <div v-html="str"></div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#div1",
+            data:{
+                // msg:'lll',
+                str:'<h2>aaa</h2>'
+            }
+        });
+    </script>
+</body>
+</html>

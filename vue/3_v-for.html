@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <!-- 数组遍历： -->
+        <div v-for="(item, index) in arr1">
+            {{item}} {{index}}
+        </div>
+        <div v-for="user in listSort">
+            <!-- {{user}}  输出对象 -->
+            {{user.name}} {{user.age}}
+        </div>
+
+        <!-- 遍历对象的属性： -->
+        <div v-for="(attr,key ) in obj1">
+            {{attr}} {{key}}
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#div1',
+            data:{
+                arr1:['a','b','c'],
+                list:[
+                    {
+                        name:'zs',
+                        age:21
+                    },{
+                        name:'li',
+                        age:22
+                    },{
+                        name:'zl',
+                        age:16
+                    }
+                ],
+                obj1:{
+                    name:'ww',
+                    age:4
+                }
+            },
+            computed: {
+                listSort(){
+                    return this.list.sort((a,b)=>{
+                        // 按age从小到大排序：
+                        return a.age-b.age;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
