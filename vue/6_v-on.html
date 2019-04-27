@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 200px;
+            height: 200px;
+            background: #ff0036;
+
+        }
+        #child{
+            width: 100px;
+            height: 100px;
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h4>please input a number:</h4>
+        <!-- <input type="number" v-model="addNum" @keyup="keyup($event)"> -->
+        <!-- <input type="number" v-model="addNum" @keyup.13="keyup($event)"> -->
+        <!-- v-on可简写为@ -->
+        <input type="number" v-model="addNum" @keyup.enter="keyup($event)">
+        <h2>{{num}}</h2>
+        <button v-on:click="onClick(2,$event)">+2</button>
+
+        <div id="parent" @click.stop="onClickParent"> 
+            <!-- .stop阻止事件冒泡 -->
+            <div id="child" @click.stop="onClickChild"></div>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#div1",
+            data:{
+                num:0,
+                addNum:0
+            },
+            methods: {
+                onClick(n,e){
+                    this.num+=n;
+                    console.log(e);
+                },
+                keyup(e){
+                    // if(e.keyCode==13){
+                        this.num+=parseInt(this.addNum);
+                    // }
+                },
+                onClickParent(){
+                    console.log('parent clicked')
+                },
+                onClickChild(){
+                    console.log('child clicked')
+                }
+            },
+        });
+    </script>
+</body>
+</html>
