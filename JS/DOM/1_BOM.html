@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>BOM</title>
+    <style>
+    body{
+        height: 1000px;
+    }
+   
+    </style>
 </head>
 <body>
-$END$
+    <a href="history.html">link</a>
+    <script>
+        // BOM 
+        window.document.write('hello world');//window.一般会省略不写；
+        var a=5;
+        console.log(window.a);
+        // window.scrollTo(0,300);
+        /*
+        var b=confirm();
+        console.log(b);
+        */
+
+        // 定时器:
+        // JS是单线程的：在同一时间只能执行一个任务
+        // setInterval可以执行多次
+        /*var timer=setInterval(function(){
+            console.log(a++);
+            if(a>9){
+                clearInterval(timer);//清除定时器
+            }
+        },1000);
+        */
+        // setTimeout只执行一次
+        var i=0;
+        var timer=setTimeout(function(){ //setTimeout是异步的
+            console.log("setTimeout");//1s后输出0
+        },0);
+        //setTimeout执行要同时满足的两个条件：1.主线程空闲；2.要到该setTimeout设定的时间；
+        // clearTimeout(timer);
+        console.log(timer);//1
+        console.log(typeof timer);//number
+        // event loop
+
+    </script>
 </body>
 </html>
