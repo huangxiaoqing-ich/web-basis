@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model</title>
+</head>
+<body>
+    <div id="div1">
+        <p>
+            please input your username:
+            <input type="text" v-model="username">
+            <!-- v-model.lazy: -->
+            username-lazy: <input type="text" v-model.lazy="username">
+            <p>username is {{username}}</p>
+        </p>
+        <p>
+            age:
+            <!-- v-model.number获取的值是数字型： -->
+            <input type="text" v-model.number="age">
+            <p>age is {{age}}</p>
+        </p>
+        <p>
+            please choose your gender:
+            <input type="radio" name="gender" value="1" v-model="gender">female
+            <input type="radio" name="gender" value="0" v-model="gender">male
+            <p>gender is {{gender}}</p>
+        </p>
+        <p>
+            please choose at least one kind of hobbies:
+            <input type="checkbox" name="hobby" v-model="hobby" value="swimming">swimming
+            <input type="checkbox" name="hobby" v-model="hobby" value="coding">coding
+            <input type="checkbox" name="hobby" v-model="hobby" value="running">running
+            <input type="checkbox" name="hobby" v-model="hobby" value="sleep">sleep
+            <p>hobbies:{{hobby}}</p>
+        </p>
+        <p>
+            please choose your school:
+            <select name="" id="" v-model="school">
+                <option value="school1">school1</option>
+                <option value="school2">school2</option>
+                <option value="school3">school3</option>
+                <option value="school4">school4</option>
+            </select>
+            <p>school is {{school}}</p>
+        </p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#div1",
+            data:{
+                username:'',
+                age:'',
+                gender:'',
+                hobby:[],
+                school:'school1'
+            }
+        });
+    </script>
+</body>
+</html>
