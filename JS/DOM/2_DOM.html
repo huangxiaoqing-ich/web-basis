@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>DOM基础</title>
 </head>
 <body>
-$END$
+    <p id="p1">document</p>
+    <ul>
+        <li>09</li>
+        <li>08</li>
+        <li>07</li>
+        <li>06</li>
+    </ul>
+    <ul id="ul2">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+    <form action="">
+        <input type="text" name="username">
+    </form>
+    <script>
+        console.log(document);
+        var oP1=document.getElementById("p1");
+        console.log(oP1);
+
+        var aLi1=document.getElementsByTagName('li');//返回值是类数组(HTMLCollection),数组（array）下自带的方法不能用于类数组
+        // console.log(aLi1);
+        for(var i=0;i<aLi1.length;i++){
+            console.log(aLi1[i]);
+        }
+
+        var oUl2=document.getElementById("ul2");
+        var aLi2=oUl2.getElementsByTagName("li");
+        for(var j=0;j<aLi2.length;j++){
+            console.log(aLi2[j]);
+        }
+
+        var username=document.getElementsByName("username");//类数组NodeList,数组的方法不能用,IE6不支持
+        console.log(username[0]);//通过数组下标进行取值
+
+    </script>
 </body>
 </html>
