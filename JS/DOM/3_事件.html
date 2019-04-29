@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>事件</title>
+    <style>
+    .green{
+        background: #0f0;
+    }
+    </style>
 </head>
 <body>
-$END$
+    <div id="div1">div1</div>
+    <button id="btn1">按钮1</button>
+    <input type="text" id="username">
+    <select name="" id="options">
+        <option value="">option1</option>
+        <option value="">option2</option>
+        <option value="">option3</option>
+    </select>
+
+    <script>
+        var oDiv1=document.getElementById("div1");
+        oDiv1.onclick=function(){ //通过dom操作css样式;
+            // oDiv1.style.background='#ff0';
+            oDiv1.className='red';//因为class是关键字，所以要写成className
+        };
+
+        var oBtn=document.getElementById("btn1");
+        oBtn.onclick=function(){
+            console.log(Math.random());
+        };
+
+        var oUsername=document.getElementById("username");
+        oUsername.onfocus=function(){
+            console.log("获取焦点");
+        };
+        oUsername.onblur=function(){
+            console.log("失去焦点");
+        }
+
+        var oOption=document.getElementById("option1");
+        oUsername.onchange=function(){
+            console.log("onchange");
+        };
+        /*
+        oUsername.onkeydown=function(){//返回前一次按键按下的情况
+            console.log(oUsername.value);
+        };
+        */ 
+        oUsername.onkeyup=function(){//返回当前按键按下的情况
+            console.log(oUsername.value);
+        };
+
+        window.onresize=function(){//监听窗口大小
+            console.log(Math.random());
+        };
+    </script>
 </body>
 </html>
