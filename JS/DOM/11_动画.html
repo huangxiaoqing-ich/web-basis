@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: palegreen;
+            color: #ea9eec;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        点我会变形
+    </div>
+
+    <script src="jslib.js"></script>
+    <script>
+        var oDiv1=document.getElementById("div1");
+        oDiv1.onclick=function(){
+            /*
+            var timer=setInterval(function(){
+                if(oDiv1.offsetWidth>=390){
+                    clearInterval(timer);
+                }
+                // .style.width/height只能取到内联样式
+                oDiv1.style.width=oDiv1.offsetWidth+10+'px';
+                // 最终oDiv1.offsetWidth等于400px
+            },100);
+            */
+            //利用jslib.js达到同样效果：
+            animate(oDiv1,{
+                width:400
+            },function(){
+                console.log("done");
+            }); //最终oDiv1.offsetWidth等于400px
+        };
+    </script>
+</body>
+</html>

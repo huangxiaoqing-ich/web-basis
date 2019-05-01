@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS获取宽高</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #0ff;
+            padding: 5px;
+            border: 10px black solid;
+            margin: 55px;
+        }
+        #div2{
+            position: relative;
+            background: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <div id="div2">
+        <div id="div1"></div>
+    </div>
+    
+    <script>
+        var oDiv1=document.getElementById('div1');
+        // offsetWidth获取到的宽度包括:内容+border+padding
+        console.log(oDiv1.offsetWidth);//230
+        console.log(oDiv1.offsetHeight);//230
+        console.log(oDiv1.offsetLeft);//相对于最近已定位的祖先元素
+        console.log(oDiv1.offsetTop);//相对于最近已定位的祖先元素
+        console.log(oDiv1.offsetParent);//相对于最近已定位的祖先元素
+    </script>
+</body>
+</html>
