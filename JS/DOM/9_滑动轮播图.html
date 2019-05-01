@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滑动轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 500px;
+            height: 375px;
+            margin : 100px auto;
+            overflow:hidden;
+            position: relative;
+        }
+        #picture{
+            width: 2500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 1s ease ;
+         }
+        #picture img{
+            float:left;
+         }
+        #num{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        #num li{
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            float: left;
+            margin-right:5px;
+            cursor: pointer;
+        }
+        #num .active{
+            background: #ff0036;
+        }
+        span{
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            margin-right:5px;
+            cursor: pointer;
+        }
+        #pre{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #next{
+            position: absolute;
+            left: 35px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="picture">
+            <img src="imgs/bird01.jpg" alt="">
+            <img src="imgs/cat01.jpg" alt="">
+            <img src="imgs/house01.jpg" alt="">
+            <img src="imgs/plate01.jpg" alt="">
+            <img src="imgs/sunflower.jpg" alt="">
+        </div>
+        <ul id="num">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div id="btn">
+            <span id="pre">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+
+    </div>
+    <script>
+        var aLi=document.getElementsByTagName("li");
+        var oPicture=document.getElementById("picture");
+        var oPre=document.getElementById("pre");
+        var oNext=document.getElementById("next");
+        var iNow=0;
+
+        function change(num){
+            for(var j=0;j<aLi.length;j++){
+                    aLi[j].className="";
+                }
+                aLi[num].className="active";
+                oPicture.style.left=-num*500+"px";
+        };
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onclick=function(){
+                change(this.index);
+                iNow=this.index;
+            };
+        }
+        oPre.onclick=oNext.onclick=function(){
+            if(this==oPre){
+                iNow--;
+                if(iNow<0){
+                    iNow=4;
+                }
+                change(iNow);
+            }else{
+                iNow++;
+                if(iNow==5){
+                    iNow=0;
+                }
+                change(iNow);
+            }
+        };
+        
+    </script>
+</body>
+</html>
