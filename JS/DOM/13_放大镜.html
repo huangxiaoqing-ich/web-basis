@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #smallBox{
+            width: 400px;
+            height:400px;
+            float: left;
+            position: relative;
+        }
+        #bigBox{
+            width:400px;
+            height:400px;
+            float: left;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.4);
+            position: absolute;
+            left:0px;
+            top:0px;
+            display: none;
+        }
+        #bigImg{
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="smallBox">
+        <img src="imgs/1.jpg"/>
+        <span id="drag"></span>
+    </div>
+    <div id="bigBox">
+        <img id="bigImg" src="imgs/2.jpg"/>
+    </div>
+    <script>
+        var oSmallBox=document.getElementById("smallBox");
+        var oDrag=document.getElementById("drag");
+        var oBigBox=document.getElementById("bigBox");
+        var oBigImg = document.getElementById('bigImg');
+
+        oSmallBox.onmouseover=function(){
+            oDrag.style.display="block";
+            oBigBox.style.display="block";
+            oSmallBox.onmousemove=function(e){
+                //drag的运动范围：
+                var dX1=e.clientX-oDrag.offsetWidth/2;
+                var dY1=e.clientY-oDrag.offsetHeight/2;
+                var dX2=oSmallBox.offsetWidth-oDrag.offsetWidth;
+                var dY2=oSmallBox.offsetHeight-oDrag.offsetHeight;
+                if(dX1<0){
+                    dX1=0;
+                }
+                if(dY1<0){
+                    dY1=0;
+                }
+                if(dX1>dX2){
+                    dX1=dX2;
+                }
+                if(dY1>dY2){
+                    dY1=dY2;
+                }
+                oDrag.style.left=dX1+'px';
+                oDrag.style.top=dY1+'px';
+
+                //bigBox:
+                var bigMax = oBigImg.offsetWidth - oBigBox.offsetWidth;
+                var bigMaxY = oBigImg.offsetHeight - oBigBox.offsetHeight;
+
+                // drag运动的比例:
+                var xP = oDrag.offsetLeft/dX2;
+                var yP = oDrag.offsetTop/dY2;
+                
+                // bigBox运动距离：
+                oBigImg.style.left = - bigMax*xP +"px";
+                oBigImg.style.top = - bigMaxY*yP +"px";
+            };
+        };
+        oSmallBox.onmouseout = function(){
+            oDrag.style.display = "none";
+            oBigBox.style.display = "none";
+        };
+    </script>
+</body>
+</html>
