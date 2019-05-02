@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 200px;
+            border: 1px black solid;
+        }
+        p{
+            width: 200px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        ul{
+            display: none;
+            border: 1px solid #000;
+        }
+        ul li{
+            list-style: none;
+            /* cursor: pointer; */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>第一部分</p>
+        <ul id="part1">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+        <p>第二部分</p>
+        <ul id="part2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        var aP=document.getElementsByTagName("p");
+        var aUl=document.getElementsByTagName("ul");
+
+        /*
+        //ES6:
+        for(let i=0;i<aP.length;i++){
+            aP[i].onclick=function(){
+                if(aUl[i].style.display=="block"){
+                    aUl[i].style.display="none";
+                }else{
+                    aUl[i].style.display="block";
+                }
+            };
+        }
+        */ 
+        for(var i=0;i<aP.length;i++){
+            aP[i].index=i;
+            aP[i].onclick=function(){
+                if(aUl[this.index].style.display=="block"){
+                    aUl[this.index].style.display="none";
+                }else{
+                    aUl[this.index].style.display="block";
+                }
+            };
+        }
+
+    </script>
+</body>
+</html>

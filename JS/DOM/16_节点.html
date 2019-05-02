@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点</title>
+</head>
+<body>
+    <div id="div1">asdfjkl</div>
+    <ul>
+        <li id="li1">01</li>
+        <li>02</li>
+        <li>03</li>
+    </ul>
+    <script>
+        var oDiv1=document.getElementById("div1");
+        var oLi1=document.getElementById("li1");
+
+        console.log(oDiv1.nodeType);//1
+        console.log(oDiv1.firstChild.nodeType);//3
+        console.log(oDiv1.nodeName);//DIV
+        console.log(oDiv1.firstChild.nodeName);//#text
+        console.log(oDiv1.nodeValue);//null
+        console.log(oDiv1.firstChild.nodeValue);//asdfjkl
+        // 节点遍历：
+        /*
+        nextSibling： 在标准浏览器下会取到文本节点(回车 );
+        在IE浏览器下会找到下一个元素节点;
+        */ 
+        console.log(oLi1.nextSibling);//结果为回车
+        //解决兼容性问题:
+        function nextSib(elem){
+            do{elem=elem.nextSibling;
+            }while(elem&&elem.nodeType!=1);
+            return elem;
+            
+        }
+        var oNext =nextSib(oLi1);
+        oNext.style.background="red";
+    </script>
+</body>
+</html>
