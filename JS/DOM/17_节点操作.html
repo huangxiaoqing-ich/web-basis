@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作</title>
+</head>
+<body>
+    <div id="div1">
+        <h1>h1</h1>
+        <h2>h2</h2>
+    </div>
+    <div id="div2">
+        <h1>h1</h1>
+        <h2 id="h2">h2</h2>
+    </div>
+    <script>
+        var oDiv1=document.getElementById("div1");
+        var oDiv2=document.getElementById('div2');
+        var oH2=document.getElementById("h2");
+        // 创建节点：
+        var oP=document.createElement("p");
+        oP.innerHTML="p节点";
+
+        //插入节点(在内部的尾端)：
+        //oDiv1.appendChild(oP);
+
+        //insertBefore在前端插入节点：
+        oDiv2.insertBefore(oP,oH2);
+
+        //替换节点：
+        // oDiv2.replaceChild(oP,oH2);
+
+        // 删除节点（只能通过父元素进行删除）：
+        oDiv2.removeChild(oH2);
+
+    </script>
+</body>
+</html>
