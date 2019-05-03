@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+    <!-- 
+        对象：
+        内置对象（8个）
+        自定义对象
+        DOM对象
+     -->
+    <script>
+        var obj1={
+            name:'zss',
+            age:13,
+            eat:function(){
+                console.log("eating...");
+            }
+        };
+        obj1.eat();
+        
+        //声明类时，属性写在构造函数中，方法写在原型下； 
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            // this.sleep=function(){
+            //     console.log("sleeping...");
+            // };
+        };
+        /*
+        prototype属性(是一个指针，指向原型对象)；
+        声明在原型对象下的属性和方法 可以被所有实例化对象调用；
+        */ 
+        Person.prototype.sleep=function(){
+            console.log("sleeping...")
+        }
+
+        var p1=new Person('ls',16);
+        console.log(p1.age);
+        p1.sleep();
+
+    </script>
+</body>
+</html>

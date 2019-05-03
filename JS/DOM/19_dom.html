@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom</title>
+</head>
+<body>
+    <!-- 
+        document.getElementById("") 返回dom对象，且只能从document中取值；
+        getElementsByTagName('') 返回类数组,没有时返回[](空数组)；
+        getElementsByClassName('') 返回类数组,没有时返回[](空数组)；
+        getElementsByName('') 返回类数组,没有时返回[](空数组)；
+        querySelector('') 返回dom对象 如果有多个，返回第一个；
+
+     -->
+     <div id="div1">div1的内容</div>
+     <ul class="ul1">
+         <li>01</li>
+         <li>02</li>
+         <li>03</li>
+     </ul>
+    <script>
+        var oDiv1=document.querySelector("#div1");
+        console.log(oDiv1);
+        var oUl1=document.querySelector('.ul1');
+        console.log(oUl1);
+        var oLi=document.querySelector('li');
+        console.log(oLi);
+
+        oDiv1.className='aa';
+        oDiv1.style.background='red';
+        /*
+        oDiv1.style.width 只能取到内联样式
+        oDiv1.offsetWidth 可以取到外部样式（包括：内容+padding+border）
+        */ 
+        function foo(){
+            console.log('asdf');
+        };
+        oDiv1.onclick=foo;
+    </script>
+</body>
+</html>
