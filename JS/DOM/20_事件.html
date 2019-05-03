@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件
+        事件源：导致事件发生的
+        事件处理函数
+        事件冒泡：点击子元素会触发父元素的点击事件（必须是父子关系）
+     -->
+     <div id="div1">
+         <div id="div2"></div>
+         
+     </div>
+     <a href="https://www.baidu.com" id="a1">百度（已阻止默认事件）</a>
+    <script>
+        var oDiv1=document.getElementById('div1');
+        oDiv1.onclick=function(e){
+            console.log(e.clientX);
+            //在点击事件里，谁的事件，this就是谁：
+            console.log(this);
+            //事件源：
+            console.log(e.target);
+
+        };
+
+        var oA1=document.getElementById('a1');
+        oA1.onclick=function(e){
+            e=e||window.event;//解决e的兼容性问题；
+            // return false;
+            // 或者：
+            e.preventDefault();//标准浏览器下阻止默认行为；
+            e.returnValue=false;//IE浏览器下阻止默认行为；
+            console.log("已阻止默认事件");
+        };
+
+        document.onkeydown=function(e){
+            e=e||window.event;
+            console.log(e.altKey);
+            // 键盘码：
+            console.log(e.keyCode);
+        };
+    </script>
+</body>
+</html>

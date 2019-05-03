@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件冒泡：点击子元素会触发父元素的点击事件（必须是父子关系,从子到父）;
+        事件捕获：
+        事件流：
+    -->
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        var oDiv1=document.getElementById('div1');
+        var oDiv2=document.getElementById('div2');
+        /*
+        oDiv1.onclick=function(){
+            console.log('div1');
+        };
+        oDiv1.onclick=function(){
+            console.log('div1-2')
+        };//这种情况下，相同事件，后者会覆盖前者
+        */
+        /*
+        oDiv1.addEventListener('click',function(){
+            console.log('div1');
+        },false);
+        // 冒泡false/捕获true；
+        // oDiv1.addEventListener('click',function(){
+        //     console.log('div1-2');
+        // },false);
+        */
+        /*
+        
+        */ 
+        // 事件冒泡，从里向外（从子到父）：
+        oDiv1.addEventListener('click',function(){
+            console.log('div1冒泡');
+        },false);
+        oDiv2.addEventListener('click',function(){
+            console.log('div2冒泡');
+        },false);
+        // 事件捕获，从外到里（从父到子）(IE不支持事件捕获)：
+        oDiv1.addEventListener('click',function(){
+            console.log('div1捕获');
+        },true);
+        oDiv2.addEventListener('click',function(){
+            console.log('div2捕获');
+        },true);
+        
+        // 既有捕获，又有冒泡时：先捕获再冒泡（先从外到里，再从里到外）
+    </script>
+</body>
+</html>
