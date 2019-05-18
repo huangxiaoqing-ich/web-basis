@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件-2</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+            
+    <script type="text/babel">
+        class Hello extends React.Component{
+            constructor(params){
+                // 
+                super(params)
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>h1标题+{this.props.name}</h1>
+                        <p>hello+{this.props.content}</p>
+                            {this.props.children}
+                            //  props.children取到开始标签与结束标签中间的内容
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Hello name="name1" content="name1的content">
+                <h2>this is a h2 title</h2>    
+            </Hello>,
+            document.getElementById("app")
+        )
+    </script>
+</body>
+</html>
