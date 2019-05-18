@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simple-toDoList</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    
+    <script type="text/babel">
+    class Main extends React.Component{
+        constructor(params){
+            super(params);
+            this.state={
+                list:['事件1','事件2']
+            }
+            this.addHandle=this.addHandle.bind(this);
+        }
+        addHandle(val){ //添加列表
+            let arr=[...this.state.list];
+            arr.push(val);
+            this.setState({
+                list:arr
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <h1>simple todoList</h1>
+                    <input type="text" ref={input=>this.myInput = input}/>
+                    <button onClick={()=>{
+                        this.addHandle(this.myInput.value);
+                        this.myInput.value = "";
+                    }}>add</button>
+                    <List list={this.state.list}></List>
+                </div>
+            )
+        }
+    }
+
+    class List extends React.Component{ //列表组件
+        render(){
+            return(
+                <ul>
+                    {
+                        this.props.list.map((val,index)=>{
+                            return <li key={index}>{val}</li>
+                        })
+                    }
+                </ul>
+                
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main></Main>,
+        document.getElementById("app")
+    );
+    </script>
+</body>
+</html>
