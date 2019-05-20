@@ -1,0 +1,100 @@
+.container{
+    width: 100%;
+    height: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image:url('img/backgound.png');
+    background-size: 100% 100%;
+}
+.gameStartBtn{
+    width: 128px;
+    height: 32px;
+    border: 5px #f5deb3 solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-image: url('img/game-start.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.msgBox{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left:-100px;
+    color:#ff0000;
+    font-size: 20px;
+    font-weight: bolder;
+    display:none;
+}
+.gameBox{
+    width: 500px;
+    height: 500px;
+    margin: 60px auto;
+    /* border: 5px #4e3a15 solid; */
+    border-top: 1px solid #4e3a15;
+    border-left: 1px solid #4e3a15;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.alertBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display:none;
+}
+.alertImg{
+    width: 495px;
+    height: 256px;
+    /* background-image: url('img/game-win.png'); */
+    background-size: 100% 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 350px;
+    margin:auto;
+    border-radius: 10px;
+}
+.close{
+    width:24px;
+    height:32px;
+    position:absolute;
+    right: 0;
+    top: 0;
+    background-image: url('img/close.png');
+    background-size: 100% 100%;
+    cursor:pointer;
+}
+.block{
+    width: 49px;
+    height: 49px;
+    border-right: 1px solid #4e3a15;
+    border-bottom: 1px solid #4e3a15;
+    box-shadow: 0 0 4px #4e3a15 inset;
+    background-image: url('img/backgound.png');
+    float: left;
+}
+.show{
+    background-image: url('img/mine.jpg');
+    background-size: 100% 100%;
+}
+.num{
+    background: #d4ba88;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 49px;
+}
+.flag{
+    background-image:url('img/flag.jpg');
+    background-size: 100% 100%;
+}
